@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .puppy-cat {
+            width: 250px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .yes-btn {
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .no-btn {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .grow {
+            font-size: 50px !important;
+            padding: 30px 60px !important;
+        }
+        .full-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            font-size: 100px !important;
+            padding: 50px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <img src="content://media/external/downloads/1000015714">
+        <div class="buttons">
+            <button class="yes-btn" id="yesButton" onclick="accept()">Yes</button>
+            <button class="no-btn" onclick="makeYesBigger()">Really sure??</button>
+        </div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        function makeYesBigger() {
+            let yesButton = document.getElementById("yesButton");
+            clickCount++;
+
+            if (clickCount === 1) {
+                yesButton.classList.add("grow");
+            } else if (clickCount === 2) {
+                yesButton.classList.add("full-screen");
+            }
+        }
+
+        function accept() {
+            alert("Yay! You are my Valentine ❤️");
+        }
+    </script>
+</body>
+</html>
